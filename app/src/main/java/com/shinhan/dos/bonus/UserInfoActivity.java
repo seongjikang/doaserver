@@ -63,6 +63,7 @@ public class UserInfoActivity extends AppCompatActivity {
 
         pref = getSharedPreferences("pref", MODE_PRIVATE);
         mHpno = pref.getString("hpno", "");
+        mName = pref.getString("name", "");
 
         if ("".equals(mHpno)) {
             Log.d(TAG, "hpno is null");
@@ -84,6 +85,11 @@ public class UserInfoActivity extends AppCompatActivity {
             Log.d(TAG, "hpno is not null");
             getName(mHpno);
         }
+
+        if ("".equals(mName)) {
+            getName(mHpno);
+        }
+
     }
 
     private void initView() {
